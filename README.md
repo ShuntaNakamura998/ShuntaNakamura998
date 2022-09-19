@@ -1,6 +1,6 @@
--python初心者
--競プロします
--https://atcoder.jp/users/ShuntaNakamura
+- python初心者
+- 競プロします
+- https://atcoder.jp/users/ShuntaNakamura
 
 <!---
 ShuntaNakamura998/ShuntaNakamura998 is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
