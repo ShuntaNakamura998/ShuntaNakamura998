@@ -1,3 +1,10 @@
+#!/usr/bin/python3
+from sys import stdin
+def input():
+    return stdin.readline().rstrip()
+from sys import setrecursionlimit
+setrecursionlimit(10 ** 9)
+
 import bisect
 from typing import List
 
@@ -13,14 +20,17 @@ def bisect_lef(arr: List[int], target: int, left: int, right: int):
 
 def binary_search(arr,x): 
   #l,rはどこからどこまでの配列を調べるかを与えます
-    l = 0
-    r = len(arr) - 1
+    tmp = 1
+    l = -1
+    r = len(arr)
     while l<r:
         mid = (r+l)//2
-        if tmp <= arr[mid]: # xが左側の配列にあるとき
+        if x <= arr[mid]: # xが左側の配列にあるとき
             r = mid
         else:              # xが右側の配列にあるとき
             l = mid
+        tmp += 1
+        if(tmp==100):break
     return r
 
 
@@ -31,5 +41,5 @@ Q = int(input())
 for i in range(Q):
     tmp = int(input())
     print(bisect_lef(A,tmp,0,len(A)))   # 出力は6
-    print(binary_search(A,tmp))
     print(bisect.bisect_left(A,tmp))
+    print(binary_search(A,tmp))

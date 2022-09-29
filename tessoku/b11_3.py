@@ -10,18 +10,18 @@ A = list(map(int,input().split()))
 A.sort()
 
 #二分探索
-def search(X):
-    L = 0
-    R = len(A) - 1
-    
-    while(R-L>1):
-        mid = int((L+R)/2)
-        if(A[mid]<X): L = mid
-        elif(A[mid]==X): return mid
-        elif(X<A[mid]): R = mid
-    return R
-
+def search(arr,x): 
+  #l,rはどこからどこまでの配列を調べるかを与えます
+    l = 0
+    r = len(arr)
+    while l<r:
+        mid = (r+l)//2
+        if x <= arr[mid]: # xが左側の配列にあるとき
+            r = mid
+        else:              # xが右側の配列にあるとき
+            l = mid+1
+    return r
 
 Q = int(input())
 for i in range(Q):
-    print(search(int(input())))
+    print(search(A,int(input())))
